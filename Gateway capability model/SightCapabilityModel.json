@@ -1,0 +1,553 @@
+{
+  "@id": "urn:AzureMediaServices:LvaEdgeGateway:1",
+  "@type": "CapabilityModel",
+  "contents": [
+    {
+      "@type": [
+        "Relationship",
+        "SemanticType/EdgeModule"
+      ],
+      "displayName": {
+        "en": "LVA Edge Gateway Module"
+      },
+      "maxMultiplicity": 1,
+      "name": "LvaEdgeGatewayModule",
+      "target": [
+        {
+          "@id": "urn:AzureMediaServices:LvaEdgeGatewayModule:1",
+          "@type": "CapabilityModel",
+          "contents": [
+            {
+              "@type": [
+                "Relationship",
+                "SemanticType/GatewayDevice"
+              ],
+              "comment": "",
+              "displayName": {
+                "en": "LVA Edge Motion Detector"
+              },
+              "name": "LVAEdgeMotionDetector",
+              "target": [
+                "urn:AzureMediaServices:LvaEdgeMotionDetectorDevice:1"
+              ]
+            },
+            {
+              "@type": [
+                "Relationship",
+                "SemanticType/GatewayDevice"
+              ],
+              "comment": "",
+              "displayName": {
+                "en": "LVA Edge Object Detector"
+              },
+              "name": "LVAEdgeObjectDetector",
+              "target": [
+                "urn:AzureMediaServices:LvaEdgeObjectDetectorDevice:1"
+              ]
+            }
+          ],
+          "displayName": {
+            "en": "LVA Edge Gateway Module"
+          },
+          "implements": [
+            {
+              "@type": "InterfaceInstance",
+              "displayName": {
+                "en": "Device information"
+              },
+              "name": "DeviceInformation",
+              "schema": {
+                "@id": "urn:azureiot:DeviceManagement:DeviceInformation:1",
+                "@type": "Interface",
+                "contents": [
+                  {
+                    "@type": "Property",
+                    "comment": "Company name of the device manufacturer. This could be the same as the name of the original equipment manufacturer (OEM). Ex. Contoso.",
+                    "displayName": {
+                      "en": "Manufacturer"
+                    },
+                    "name": "manufacturer",
+                    "schema": "string"
+                  },
+                  {
+                    "@type": "Property",
+                    "comment": "Device model name or ID. Ex. Surface Book 2.",
+                    "displayName": {
+                      "en": "Device model"
+                    },
+                    "name": "model",
+                    "schema": "string"
+                  },
+                  {
+                    "@type": "Property",
+                    "comment": "Version of the software on your device. This could be the version of your firmware. Ex. 1.3.45",
+                    "displayName": {
+                      "en": "Software version"
+                    },
+                    "name": "swVersion",
+                    "schema": "string"
+                  },
+                  {
+                    "@type": "Property",
+                    "comment": "Name of the operating system on the device. Ex. Windows 10 IoT Core.",
+                    "displayName": {
+                      "en": "Operating system name"
+                    },
+                    "name": "osName",
+                    "schema": "string"
+                  },
+                  {
+                    "@type": "Property",
+                    "comment": "Architecture of the processor on the device. Ex. x64 or ARM.",
+                    "displayName": {
+                      "en": "Processor architecture"
+                    },
+                    "name": "processorArchitecture",
+                    "schema": "string"
+                  },
+                  {
+                    "@type": "Property",
+                    "comment": "Name of the manufacturer of the processor on the device. Ex. Intel.",
+                    "displayName": {
+                      "en": "Processor manufacturer"
+                    },
+                    "name": "processorManufacturer",
+                    "schema": "string"
+                  },
+                  {
+                    "@type": "Property",
+                    "comment": "Total available storage on the device in kilobytes. Ex. 2048000 kilobytes.",
+                    "displayName": {
+                      "en": "Total storage"
+                    },
+                    "name": "totalStorage",
+                    "schema": "long",
+                    "displayUnit": {
+                      "en": "kilobytes"
+                    }
+                  },
+                  {
+                    "@type": "Property",
+                    "comment": "Total available memory on the device in kilobytes. Ex. 256000 kilobytes.",
+                    "displayName": {
+                      "en": "Total memory"
+                    },
+                    "name": "totalMemory",
+                    "schema": "long",
+                    "displayUnit": {
+                      "en": "kilobytes"
+                    }
+                  }
+                ],
+                "displayName": {
+                  "en": "Device information"
+                }
+              }
+            },
+            {
+              "@type": "InterfaceInstance",
+              "displayName": {
+                "en": "Lva Edge Gateway Settings"
+              },
+              "name": "LvaEdgeGatewaySettings",
+              "schema": {
+                "@id": "urn:AzureMediaServices:LvaEdgeGatewaySettings:1",
+                "@type": "Interface",
+                "contents": [
+                  {
+                    "@type": "Property",
+                    "displayName": {
+                      "en": "Debug Telemetry"
+                    },
+                    "name": "wpDebugTelemetry",
+                    "schema": "boolean",
+                    "writable": true
+                  },
+                  {
+                    "@type": "Property",
+                    "displayName": {
+                      "en": "Debug Routed Message"
+                    },
+                    "name": "wpDebugRoutedMessage",
+                    "schema": "boolean",
+                    "writable": true
+                  }
+                ],
+                "displayName": {
+                  "en": "Lva Edge Gateway Settings"
+                }
+              }
+            },
+            {
+              "@type": "InterfaceInstance",
+              "displayName": {
+                "en": "Lva Edge Gateway Interface"
+              },
+              "name": "LvaEdgeGatewayInterface",
+              "schema": {
+                "@id": "urn:AzureMediaServices:LvaEdgeGatewayInterface:1",
+                "@type": "Interface",
+                "contents": [
+                  {
+                    "@type": "Telemetry",
+                    "displayName": {
+                      "en": "System Heartbeat"
+                    },
+                    "name": "tlSystemHeartbeat",
+                    "schema": "integer"
+                  },
+                  {
+                    "@type": "Telemetry",
+                    "displayName": {
+                      "en": "Free Memory"
+                    },
+                    "name": "tlFreeMemory",
+                    "schema": "long"
+                  },
+                  {
+                    "@type": "Telemetry",
+                    "displayName": {
+                      "en": "Connected Cameras"
+                    },
+                    "name": "tlConnectedCameras",
+                    "schema": "long"
+                  },
+                  {
+                    "@type": [
+                      "Telemetry",
+                      "SemanticType/State"
+                    ],
+                    "displayName": {
+                      "en": "IoT Central Client State"
+                    },
+                    "name": "stIoTCentralClientState",
+                    "schema": {
+                      "@id": "urn:AzureMediaServices:LvaEdgeGatewayInterface:stIoTCentralClientState:schema:1",
+                      "@type": "Enum",
+                      "enumValues": [
+                        {
+                          "displayName": {
+                            "en": "disconnected"
+                          },
+                          "enumValue": "disconnected",
+                          "name": "disconnected"
+                        },
+                        {
+                          "displayName": {
+                            "en": "connected"
+                          },
+                          "enumValue": "connected",
+                          "name": "connected"
+                        }
+                      ],
+                      "valueSchema": "string"
+                    }
+                  },
+                  {
+                    "@type": [
+                      "Telemetry",
+                      "SemanticType/State"
+                    ],
+                    "displayName": {
+                      "en": "Module State"
+                    },
+                    "name": "stModuleState",
+                    "schema": {
+                      "@id": "urn:AzureMediaServices:LvaEdgeGatewayInterface:stModuleState:schema:1",
+                      "@type": "Enum",
+                      "enumValues": [
+                        {
+                          "displayName": {
+                            "en": "inactive"
+                          },
+                          "enumValue": "inactive",
+                          "name": "inactive"
+                        },
+                        {
+                          "displayName": {
+                            "en": "active"
+                          },
+                          "enumValue": "active",
+                          "name": "active"
+                        }
+                      ],
+                      "valueSchema": "string"
+                    }
+                  },
+                  {
+                    "@type": [
+                      "Telemetry",
+                      "SemanticType/Event"
+                    ],
+                    "displayName": {
+                      "en": "Create Camera"
+                    },
+                    "name": "evCreateCamera",
+                    "schema": "string"
+                  },
+                  {
+                    "@type": [
+                      "Telemetry",
+                      "SemanticType/Event"
+                    ],
+                    "displayName": {
+                      "en": "Delete Camera"
+                    },
+                    "name": "evDeleteCamera",
+                    "schema": "string"
+                  },
+                  {
+                    "@type": [
+                      "Telemetry",
+                      "SemanticType/Event"
+                    ],
+                    "displayName": {
+                      "en": "Module Started"
+                    },
+                    "name": "evModuleStarted",
+                    "schema": "string"
+                  },
+                  {
+                    "@type": [
+                      "Telemetry",
+                      "SemanticType/Event"
+                    ],
+                    "displayName": {
+                      "en": "Module Stopped"
+                    },
+                    "name": "evModuleStopped",
+                    "schema": "string"
+                  },
+                  {
+                    "@type": [
+                      "Telemetry",
+                      "SemanticType/Event"
+                    ],
+                    "displayName": {
+                      "en": "Module Restart"
+                    },
+                    "name": "evModuleRestart",
+                    "schema": "string"
+                  },
+                  {
+                    "@type": "Command",
+                    "commandType": "asynchronous",
+                    "displayName": {
+                      "en": "Add Camera"
+                    },
+                    "name": "cmAddCamera",
+                    "request": {
+                      "@type": "SchemaField",
+                      "displayName": {
+                        "en": "Add Camera Request"
+                      },
+                      "name": "AddCameraRequest",
+                      "schema": {
+                        "@id": "urn:AzureMediaServices:LvaEdgeGatewayInterface:cmAddCamera:AddCameraRequest:schema:1",
+                        "@type": "Object",
+                        "displayName": {
+                          "en": "Object"
+                        },
+                        "fields": [
+                          {
+                            "displayName": {
+                              "en": "Camera Id"
+                            },
+                            "name": "AddCameraRequestParams_CameraId",
+                            "schema": "string"
+                          },
+                          {
+                            "displayName": {
+                              "en": "Camera Name"
+                            },
+                            "name": "AddCameraRequestParams_CameraName",
+                            "schema": "string"
+                          },
+                          {
+                            "displayName": {
+                              "en": "Rtsp Url"
+                            },
+                            "name": "AddCameraRequestParams_RtspUrl",
+                            "schema": "string"
+                          },
+                          {
+                            "displayName": {
+                              "en": "Rtsp Username"
+                            },
+                            "name": "AddCameraRequestParams_RtspAuthUsername",
+                            "schema": "string"
+                          },
+                          {
+                            "displayName": {
+                              "en": "Rtsp Password"
+                            },
+                            "name": "AddCameraRequestParams_RtspAuthPassword",
+                            "schema": "string"
+                          },
+                          {
+                            "displayName": {
+                              "en": "Detection Type"
+                            },
+                            "name": "AddCameraRequestParams_DetectionType",
+                            "schema": {
+                              "@id": "urn:AzureMediaServices:LvaEdgeGatewayInterface:cmAddCamera:AddCameraRequest:schema:AddCameraRequestParams_DetectionType:schema:1",
+                              "@type": "Enum",
+                              "displayName": {
+                                "en": "Enum"
+                              },
+                              "enumValues": [
+                                {
+                                  "displayName": {
+                                    "en": "Motion Detection"
+                                  },
+                                  "enumValue": "motion",
+                                  "name": "DetectionTypeEnum_Motion"
+                                },
+                                {
+                                  "displayName": {
+                                    "en": "Object Detection"
+                                  },
+                                  "enumValue": "object",
+                                  "name": "DetectionTypeEnum_Object"
+                                }
+                              ],
+                              "valueSchema": "string"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "response": {
+                      "@type": "SchemaField",
+                      "displayName": {
+                        "en": "AddCameraResponse"
+                      },
+                      "name": "AddCameraResponse",
+                      "schema": "string"
+                    }
+                  },
+                  {
+                    "@type": "Command",
+                    "commandType": "asynchronous",
+                    "displayName": {
+                      "en": "Delete Camera"
+                    },
+                    "name": "cmDeleteCamera",
+                    "request": {
+                      "@type": "SchemaField",
+                      "displayName": {
+                        "en": "Delete Camera Request"
+                      },
+                      "name": "DeleteCameraRequest",
+                      "schema": {
+                        "@id": "urn:AzureMediaServices:LvaEdgeGatewayInterface:cmDeleteCamera:DeleteCameraRequest:schema:1",
+                        "@type": "Object",
+                        "displayName": {
+                          "en": "Object"
+                        },
+                        "fields": [
+                          {
+                            "displayName": {
+                              "en": "Camera Id"
+                            },
+                            "name": "DeleteCameraRequestParams_CameraId",
+                            "schema": "string"
+                          }
+                        ]
+                      }
+                    },
+                    "response": {
+                      "@type": "SchemaField",
+                      "displayName": {
+                        "en": "DeleteCameraResponse"
+                      },
+                      "name": "DeleteCameraResponse",
+                      "schema": "string"
+                    }
+                  },
+                  {
+                    "@type": "Command",
+                    "commandType": "asynchronous",
+                    "displayName": {
+                      "en": "Restart Module"
+                    },
+                    "name": "cmRestartModule",
+                    "request": {
+                      "@type": "SchemaField",
+                      "displayName": {
+                        "en": "Restart Module Request"
+                      },
+                      "name": "RestartModuleRequest",
+                      "schema": {
+                        "@id": "urn:AzureMediaServices:LvaEdgeGatewayInterface:cmRestartModule:RestartModuleRequest:schema:1",
+                        "@type": "Object",
+                        "displayName": {
+                          "en": "Object"
+                        },
+                        "fields": [
+                          {
+                            "displayName": {
+                              "en": "Timeout"
+                            },
+                            "name": "RestartModuleRequestParams_Timeout",
+                            "schema": "integer"
+                          }
+                        ]
+                      }
+                    },
+                    "response": {
+                      "@type": "SchemaField",
+                      "displayName": {
+                        "en": "RestartModuleResponse"
+                      },
+                      "name": "RestartModuleResponse",
+                      "schema": "string"
+                    }
+                  }
+                ],
+                "displayName": {
+                  "en": "Lva Edge Gateway Interface"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@type": [
+        "Relationship",
+        "SemanticType/GatewayDevice"
+      ],
+      "comment": "",
+      "displayName": {
+        "en": "LVA Edge Motion Detector"
+      },
+      "name": "LVAEdgeMotionDetector",
+      "target": [
+        "urn:AzureMediaServices:LvaEdgeMotionDetectorDevice:1"
+      ]
+    },
+    {
+      "@type": [
+        "Relationship",
+        "SemanticType/GatewayDevice"
+      ],
+      "comment": "",
+      "displayName": {
+        "en": "LVA Edge Object Detector"
+      },
+      "name": "LVAEdgeObjectDetector",
+      "target": [
+        "urn:AzureMediaServices:LvaEdgeObjectDetectorDevice:1"
+      ]
+    }
+  ],
+  "displayName": {
+    "en": "LVA Edge Gateway Module"
+  },
+  "implements": [],
+  "@context": [
+    "http://azureiot.com/v1/contexts/IoTModel.json"
+  ]
+}
