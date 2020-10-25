@@ -13,3 +13,8 @@ wiiSense offers the ability to understand people’s movements, needs, and make 
   
   To view the wiiSense POC send a mail to dikeclementu@gmail.com to get access.
   
+ # wiiSense DEMO
+  1. Demo link: https://drive.google.com/file/d/1Gy1fD7WdRfjNQx4NTsvcp4oll_L_iKRW/view?usp=sharing
+NOTE: <h2>The team could not use the spatial analysis module due to the minimum hardware requirement to run the AI module.<h2>
+
+  
