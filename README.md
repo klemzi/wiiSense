@@ -4,12 +4,12 @@ wiiSense offers the ability to understand people’s movements, needs, and make 
 # Installation steps
   1. Create your wiiSense IoT Central template here: https://bit.ly/2HwG2fK
   2. on the device template page on the app, create a new template for sight and touch gateways using the capability models in the Gateway capability model directory.
-  2. Create your wiiSense Sight and Touch Gateways on the App (You can simulate the touch gateway).
-  3. Configure the Sight and Touch gateway devices.
-  4. Create smart buttons devices on wiiSense App and attach to the touch gateway(You can simulate).
-  5. Add Cameras to the Sight gateway.
-  6. Add HR emails/teams account to the power automate workflows.
-  7. Embedd Power BI visuals on teams.
+  3. Create your wiiSense Sight and Touch Gateways on the App (You can simulate the touch gateway).
+  4. Configure the Sight and Touch gateway devices.
+  5. Create smart buttons devices on wiiSense App and attach to the touch gateway(You can simulate).
+  6. Add Cameras to the Sight gateway.
+  7. Add HR emails/teams account to the power automate workflows.
+  8. Embedd Power BI visuals on teams.
   
   
   To view the wiiSense POC send a mail to dikeclementu@gmail.com to get access.
