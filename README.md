@@ -11,7 +11,7 @@ wiiSense offers the ability to understand people’s movements, needs, and make 
   7. Add HR emails/teams account to the power automate workflows.
   8. Embedd Power BI visuals on teams.
   
-  
+  <h5> wiiSense PoC <h5>
   To view the wiiSense POC send a mail to dikeclementu@gmail.com to get access.
   
  # wiiSense DEMO
