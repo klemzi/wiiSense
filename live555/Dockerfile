@@ -18,7 +18,7 @@ RUN apt-get update && \
 
 WORKDIR /live/mediaServer
 
-ADD ./camera-300s.mkv /live/mediaServer/media/
+ADD https://github.com/klemzi/wiiSense/blob/main/live555/camera-300s.mkv /live/mediaServer/media/
 
 
 EXPOSE 554
