@@ -3,8 +3,6 @@ name: ci
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   path-context:
@@ -33,4 +31,4 @@ jobs:
           file: ./Dockerfile
           repository: klempy/live555
           push: true
-          tags: $(date +%s)
+          tags: v*
