@@ -18,7 +18,7 @@ RUN apt-get update && \
 
 WORKDIR /live/mediaServer
 
-ADD ./ganglondon.mkv /live/mediaServer/media/
+ADD ./camera-300s.mkv /live/mediaServer/media/
 
 
 EXPOSE 554
