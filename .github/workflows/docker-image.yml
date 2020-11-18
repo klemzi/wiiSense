@@ -27,8 +27,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: klemzi/wiiSense/live555/
-          file: ./Dockerfile
+          file: klemzi/wiiSense/live555/Dockerfile
           repository: klempy/live555
           push: true
           tags: v1
