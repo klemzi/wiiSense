@@ -31,4 +31,4 @@ jobs:
           file: ./Dockerfile
           repository: klempy/live555
           push: true
-          tags: v*
+          tags: v1
